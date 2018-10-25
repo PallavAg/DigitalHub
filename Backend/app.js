@@ -24,7 +24,7 @@ mongoose.connect(config.database, { promiseLibrary: require('bluebird') })
   .catch((err) => console.error(err));
 
   app.use(passport.initialize());
-  app.use('/api', api);
+
 
 
 // view engine setup
@@ -39,7 +39,7 @@ app.use('/books', express.static(path.join(__dirname, 'dist')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-
+app.use('/api', api);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
