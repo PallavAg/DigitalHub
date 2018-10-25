@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from "@angular/router";
 import { Observable } from 'rxjs/Observable';
@@ -16,7 +15,6 @@ export class BookComponent implements OnInit {
   books: any;
 
 
-  constructor() { }
   constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit() {

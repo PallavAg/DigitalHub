@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from "@angular/router";
 import { Observable } from 'rxjs/Observable';
@@ -18,7 +17,6 @@ export class LoginComponent implements OnInit {
   message = '';
   data: any;
 
-  constructor() { } //~~Need to remove?
   constructor(private http: HttpClient, private router: Router) { }
 
   login() {
