@@ -21,7 +21,7 @@ export class BookComponent implements OnInit {
   let httpOptions = {
     headers: new HttpHeaders({ 'Authorization': localStorage.getItem('jwtToken') })
   };
-  this.http.get('/api/book', httpOptions).subscribe(data => {
+  this.http.get('http://localhost:3000/api/book', httpOptions).subscribe(data => {
     this.books = data;
     console.log(this.books);
   }, err => {
