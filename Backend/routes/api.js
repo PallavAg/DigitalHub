@@ -7,6 +7,7 @@ var jwt = require('jsonwebtoken');
 var router = express.Router();
 var User = require("../models/user");
 var Book = require("../models/book");
+var Media = require("../models/media");
 
 //Signing up and registering
 router.post('/signup', function(req, res) {
@@ -54,22 +55,19 @@ router.post('/signin', function(req, res) {
 });
 
 //Router for add new book that only accessible to authorized user
-router.post('/book', passport.authenticate('jwt', { session: false}), function(req, res) {
+router.post('/media', passport.authenticate('jwt', { session: false}), function(req, res) {
   var token = getToken(req.headers);
   if (token) {
     console.log(req.body);
-    var newBook = new Book({
-      isbn: req.body.isbn,
-      title: req.body.title,
-      author: req.body.author,
-      publisher: req.body.publisher
+    var newMediaItem = new Media({
+      url: req.body.url
     });
 
-    newBook.save(function(err) {
+    newMediaItem.save(function(err) {
       if (err) {
-        return res.json({success: false, msg: 'Save book failed.'});
+        return res.json({success: false, msg: 'Media could not be added'});
       }
-      res.json({success: true, msg: 'Successful created new book.'});
+      res.json({success: true, msg: 'Successful added the item'});
     });
   } else {
     return res.status(403).send({success: false, msg: 'Unauthorized.'});
