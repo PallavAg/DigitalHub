@@ -11,12 +11,19 @@ import { SignupComponent } from './signup/signup.component';
 import { BookComponent } from './book/book.component';
 
 import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { ColumncomponentComponent } from './columncomponent/columncomponent.component';
 
 const appRoutes: Routes = [
   {
     path: 'books',
     component: BookComponent,
     data: { title: 'Book List' }
+  },
+  {
+    path: 'home',
+    component: HomeComponent,
+    data: { title: 'Home' }
   },
   {
     path: 'login',
@@ -39,7 +46,9 @@ const appRoutes: Routes = [
     AppComponent,
     LoginComponent,
     SignupComponent,
-    BookComponent
+    BookComponent,
+    HomeComponent,
+    ColumncomponentComponent
   ],
   imports: [
   BrowserModule,

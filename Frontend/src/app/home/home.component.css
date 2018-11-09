@@ -1,0 +1,14 @@
+.column{
+  padding: 1em;
+  /* margin: 2px; */
+  background-color: lightblue;
+  height: 100%;
+  /* border-width: 3px;
+  border-color: white;
+  border-style: solid; */
+  border-radius: 5px;
+}
+
+.inputLink{
+  padding: 1em;
+}
