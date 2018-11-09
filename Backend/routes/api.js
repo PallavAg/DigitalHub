@@ -75,12 +75,12 @@ router.post('/media', passport.authenticate('jwt', { session: false}), function(
 });
 
 
-router.get('/book', passport.authenticate('jwt', { session: false}), function(req, res) {
+router.get('/media', passport.authenticate('jwt', { session: false}), function(req, res) {
   var token = getToken(req.headers);
   if (token) {
-    Book.find(function (err, books) {
+    Media.find(function (err, media) {
       if (err) return next(err);
-      res.json(books);
+      res.json(media);
     });
   } else {
     return res.status(403).send({success: false, msg: 'Unauthorized.'});
