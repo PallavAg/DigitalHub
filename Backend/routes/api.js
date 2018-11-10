@@ -70,7 +70,7 @@ router.post('/media', passport.authenticate('jwt', { session: false}), function(
       res.json({success: true, msg: 'Successful added the item'});
     });
   } else {
-    return res.status(403).send({success: false, msg: 'Unauthorized.'});
+    return res.status(403).send({success: false, msg: 'Unauthorized Access'});
   }
 });
 

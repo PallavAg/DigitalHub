@@ -14,6 +14,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ColumncomponentComponent } from './columncomponent/columncomponent.component';
 
+import { MediaService } from './media.service';
+import { HttpModule } from '@angular/http';
+
+
 const appRoutes: Routes = [
   {
     path: 'books',
@@ -51,6 +55,7 @@ const appRoutes: Routes = [
     ColumncomponentComponent
   ],
   imports: [
+  HttpModule,
   BrowserModule,
   FormsModule,
   HttpClientModule,
@@ -60,7 +65,7 @@ const appRoutes: Routes = [
     { enableTracing: true } // <-- debugging purposes only
   )
 ],
-  providers: [],
+  providers: [MediaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

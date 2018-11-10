@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MediaService } from 'src/app/media.service';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  link: String;
+
+
+
+  constructor(private mediaService: MediaService) {
+
+  }
+
+  sendToBack(){
+    let media = { url: this.link } //JSON Object
+
+    this.mediaService.addLinks(media).subscribe(data => { window.alert("Successfully added your link");  }, err => {window.alert(err);} );
+
+  }
 
   ngOnInit() {
   }
