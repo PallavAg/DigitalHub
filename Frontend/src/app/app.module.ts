@@ -17,6 +17,7 @@ import { ColumncomponentComponent } from './columncomponent/columncomponent.comp
 import { MediaService } from './media.service';
 import { HttpModule } from '@angular/http';
 
+import { JwtModule } from '@auth0/angular-jwt';
 
 const appRoutes: Routes = [
   {
@@ -59,6 +60,7 @@ const appRoutes: Routes = [
   BrowserModule,
   FormsModule,
   HttpClientModule,
+  JwtModule,
   //~~AppRoutingModule,
   RouterModule.forRoot(
     appRoutes,
