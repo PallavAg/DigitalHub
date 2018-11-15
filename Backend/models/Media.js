@@ -5,6 +5,10 @@ var MediaSchema = new Schema({
   url: {
     type: String,
     required: true
+  },
+  userId: {
+    type: String,
+    required: true
   }
 });
 

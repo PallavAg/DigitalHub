@@ -16,6 +16,8 @@ export class HomeComponent implements OnInit {
   expirationDate: String;
   isExpired: String;
   userId: String;
+  items: any[] = [];
+  
 
   constructor(private mediaService: MediaService) {
    const tokenKey = localStorage.getItem("jwtToken");
@@ -35,6 +37,10 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
+    // this.mediaService.getLinks().subscribe(data => { 
+    //   this.items = data; 
+    //   console.log(data) 
+    // }, err => {window.alert(err);} );
   }
 
 }

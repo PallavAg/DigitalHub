@@ -28,4 +28,8 @@ export class MediaService {
     return this.http.post('http://localhost:3000/api/media', link, this.jwt()).map((response: Response) => response.json());
   }
 
+  getLinks(){
+    return this.http.get('http://localhost:3000/api/media', this.jwt()).map((response: Response) => response.json());
+  }
+
 }

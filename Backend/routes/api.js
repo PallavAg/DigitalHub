@@ -8,6 +8,8 @@ var router = express.Router();
 var User = require("../models/user");
 var Book = require("../models/book");
 var Media = require("../models/media");
+var jwt_decode = require('jwt-decode');
+
 
 //Signing up and registering
 router.post('/signup', function(req, res) {
@@ -60,7 +62,8 @@ router.post('/media', passport.authenticate('jwt', { session: false}), function(
   if (token) {
     console.log(req.body);
     var newMediaItem = new Media({
-      url: req.body.url
+      url: req.body.url,
+      userId: req.body.userId
     });
 
     newMediaItem.save(function(err) {
@@ -77,8 +80,12 @@ router.post('/media', passport.authenticate('jwt', { session: false}), function(
 
 router.get('/media', passport.authenticate('jwt', { session: false}), function(req, res) {
   var token = getToken(req.headers);
+  var decoded = jwt_decode(token);
+  var userId = decoded._id;
+  
   if (token) {
-    Media.find(function (err, media) {
+
+    Media.find({"userId": userId}, function (err, media) {
       if (err) return next(err);
       res.json(media);
     });
