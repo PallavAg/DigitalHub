@@ -9,6 +9,18 @@ var MediaSchema = new Schema({
   userId: {
     type: String,
     required: true
+  },
+  mediaType: {
+    type: String,
+    required: false
+  },
+  mediaName: {
+    type: String,
+    required: false
+  },
+  mediaImage: {
+    type: String,
+    required: false
   }
 });
 
