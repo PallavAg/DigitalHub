@@ -64,7 +64,7 @@ router.post('/media', passport.authenticate('jwt', { session: false}), function(
     var newMediaItem = new Media({
       url: req.body.url,
       userId: req.body.userId,
-      mediaType: "Movie",
+      mediaType: "Movies",
       mediaName: "Tron",
       mediaImage: "IMAGE"
     });

@@ -17,7 +17,9 @@ export class ColumncomponentComponent implements OnInit {
   ngOnInit() {
     this.mediaService.getLinks().subscribe(data => { 
       this.items = data; 
-      console.log(data) 
+      console.log(data);
+      let title = this.title;
+      this.items = this.items.filter(function (item) {return item.mediaType == title})
     }, err => {window.alert(err);} );
   }
 
