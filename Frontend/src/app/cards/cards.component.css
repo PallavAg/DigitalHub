@@ -1,0 +1,23 @@
+.container{
+  background-color: #181921;
+  padding-left: 5px;
+  border-radius: 10px;
+  height: 120px;
+  width: auto;
+}
+
+img{
+  float: left;
+  
+  height: 100px;
+  width: auto;
+  margin-top: 10px;
+  margin-left: 3px;
+}
+
+#title{
+  font-weight: 200;
+
+  padding-top: 40px;
+  padding-left: 80px;
+}

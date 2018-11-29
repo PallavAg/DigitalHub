@@ -18,6 +18,7 @@ import { MediaService } from './media.service';
 import { HttpModule } from '@angular/http';
 
 import { JwtModule } from '@auth0/angular-jwt';
+import { CardsComponent } from './cards/cards.component';
 
 const appRoutes: Routes = [
   {
@@ -53,7 +54,8 @@ const appRoutes: Routes = [
     SignupComponent,
     BookComponent,
     HomeComponent,
-    ColumncomponentComponent
+    ColumncomponentComponent,
+    CardsComponent
   ],
   imports: [
   HttpModule,
