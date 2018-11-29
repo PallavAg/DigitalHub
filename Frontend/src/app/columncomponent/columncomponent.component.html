@@ -2,8 +2,6 @@
 
 <div class="card black">
   <div class="card-content white-text">
-    <div *ngFor="let item of items">{{item.mediaName}} </div>
-    <div> <app-cards></app-cards> </div>
-    <div> <app-cards></app-cards> </div>
+    <div *ngFor="let item of items"><app-cards [item] = "item"></app-cards></div>
   </div>
 </div>

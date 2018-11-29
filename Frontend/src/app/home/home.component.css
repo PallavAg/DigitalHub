@@ -9,6 +9,10 @@
   border-radius: 5px;
 }
 
+input{
+  color: white !important;
+}
+
 .inputLink{
   padding: 1em;
 }
