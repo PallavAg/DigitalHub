@@ -1,23 +1,29 @@
 .container{
   background-color: #181921;
-  padding-left: 5px;
+  /* padding-left: 5px; */
   border-radius: 10px;
-  height: 120px;
+  /* height: 120px; */
   width: auto;
 }
 
 img{
   float: left;
-  
-  height: 100px;
-  width: auto;
+  height: auto;
+  width: 70px;
   margin-top: 10px;
-  margin-left: 3px;
+  margin-bottom: 10px;
+  /* margin-left: 15px; */
 }
 
 #title{
   font-weight: 200;
+  font-size: 1.6vw;
+  padding-left: 15px;
+  text-align: center;
+}
 
-  padding-top: 40px;
-  padding-left: 80px;
+.row{
+  display: flex;
+
+  align-items: center;
 }
