@@ -31,6 +31,4 @@ export class ColumncomponentComponent implements OnInit {
     }, err => { window.alert(err); });
   }
 
-
-
 }

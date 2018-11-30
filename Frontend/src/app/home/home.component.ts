@@ -2,7 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { MediaService } from 'src/app/media.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Subject } from 'rxjs';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -21,9 +21,12 @@ export class HomeComponent implements OnInit {
   @Output() reloadData = new EventEmitter<any>();
   parentSubject: Subject<any> = new Subject();
 
-  constructor(private mediaService: MediaService) {
+  constructor(private mediaService: MediaService, private router: Router) {
     const tokenKey = localStorage.getItem("jwtToken");
     const decodedToken = this.helper.decodeToken(tokenKey);
+    if (!decodedToken) {
+      this.router.navigate(['/login']);
+    }
     this.userId = decodedToken._id;
     const expirationDate = this.helper.getTokenExpirationDate(tokenKey);
     const isExpired = this.helper.isTokenExpired(tokenKey);
@@ -39,10 +42,6 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.mediaService.getLinks().subscribe(data => { 
-    //   this.items = data; 
-    //   console.log(data) 
-    // }, err => {window.alert(err);} );
   }
 
 }

@@ -22,11 +22,6 @@ import { CardsComponent } from './cards/cards.component';
 
 const appRoutes: Routes = [
   {
-    path: 'books',
-    component: BookComponent,
-    data: { title: 'Book List' }
-  },
-  {
     path: 'home',
     component: HomeComponent,
     data: { title: 'Home' }
@@ -41,8 +36,9 @@ const appRoutes: Routes = [
     component: SignupComponent,
     data: { title: 'Sign Up' }
   },
-  { path: '',
-    redirectTo: '/books',
+  {
+    path: '',
+    redirectTo: '/home',
     pathMatch: 'full'
   }
 ];
@@ -58,17 +54,17 @@ const appRoutes: Routes = [
     CardsComponent
   ],
   imports: [
-  HttpModule,
-  BrowserModule,
-  FormsModule,
-  HttpClientModule,
-  JwtModule,
-  //~~AppRoutingModule,
-  RouterModule.forRoot(
-    appRoutes,
-    { enableTracing: true } // <-- debugging purposes only
-  )
-],
+    HttpModule,
+    BrowserModule,
+    FormsModule,
+    HttpClientModule,
+    JwtModule,
+    //~~AppRoutingModule,
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    )
+  ],
   providers: [MediaService],
   bootstrap: [AppComponent]
 })
