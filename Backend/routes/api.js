@@ -78,14 +78,32 @@ router.post('/media', passport.authenticate('jwt', { session: false }), function
         var title = "DIDN'T WORK";
         var poster = "DIDN'T WORK";
         var type = "Movies";
+        var isTVShow = false;
         if (website == 'www.imdb.com') {
           title = $('.title_wrapper > h1', html)[0].children[0].data;
           poster = $('.poster > a > img', html)[0].attribs.src;
-          type = "Movies";
+          isTVShow = html.includes("TV Series");
+          if (isTVShow) {
+            type = "TV Shows";
+          }
         } else if (website == 'www.goodreads.com') {
+          type = "Books";
+          title = $('#bookTitle', html)[0].children[0].data.trim();
+          poster = $('#coverImage', html)[0].attribs.src;
 
         } else if (website == 'www.youtube.com') {
+          type = "Videos";
+          title = $('title', html)[0].children[0].data;
+          title = title.substring(0, title.length - 9);
 
+          var youtube_video_id = urlMedia.match(/youtube\.com.*(\?v=|\/embed\/)(.{11})/).pop();
+          if (youtube_video_id.length == 11) {
+            poster = 'https://img.youtube.com/vi/' + youtube_video_id + '/0.jpg';
+            console.log(poster);
+          }
+
+        } else {
+          return res.json({ success: false, msg: 'Only IMDB, Goodreads and Youtube is supported' });
         }
 
         console.log(req.body);
