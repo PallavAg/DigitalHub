@@ -9,6 +9,27 @@ body {
   padding: 15px;
   margin: 0 auto;
 }
+
+.form-signin-heading{
+  color: white;
+  text-align: center;
+  color: white;
+  font-family: 'SF UI Display', sans-serif;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding-bottom: 30px;
+}
+
+.form-control{
+  color: white;
+}
+
+.cardd{
+  background-color: black;
+  border-radius: 15px;
+  padding: 20px;
+}
+
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
   margin-bottom: 10px;
@@ -39,4 +60,5 @@ body {
 }
 .form-signin p {
   margin-top: 10px;
+  color: white;
 }

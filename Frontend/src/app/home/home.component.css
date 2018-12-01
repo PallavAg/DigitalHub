@@ -5,3 +5,12 @@ input{
 .inputLink{
   padding: 1em;
 }
+
+h1{
+  text-align: center;
+  color: white;
+  font-family: 'SF UI Display', sans-serif;
+  font-weight: 800;
+  letter-spacing: 1px;
+  /* text-shadow: 2px 2px #ffffff; */
+}

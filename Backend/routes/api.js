@@ -82,7 +82,7 @@ router.post('/media', passport.authenticate('jwt', { session: false }), function
         if (website == 'www.imdb.com') {
           title = $('.title_wrapper > h1', html)[0].children[0].data;
           poster = $('.poster > a > img', html)[0].attribs.src;
-          isTVShow = html.includes("TV Series");
+          isTVShow = html.includes("TV Series (");
           if (isTVShow) {
             type = "TV Shows";
           }
