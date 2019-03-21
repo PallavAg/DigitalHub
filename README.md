@@ -5,7 +5,7 @@ The website works by pasting an IMBD, YouTube or GoodReads links and the website
 
 I coded this project over two months. It is written mainly in JavaScript with the website frontend in HTML/CSS which incorporated the materialize library.  It’s frontend is built using Angular and the backend uses Node.js with MongoDB as the database.
 
-`ng serve` on the frontend and `npm start` on the backend to launch DigitalHub on `localhost:4200`
+`ng serve` on the frontend and `npm start` on the backend to launch DigitalHub on `localhost:4200`. Requires installation of node modules.
 
 ![Image Loading Error](https://i.imgur.com/Fzv73jZ.png)
 
